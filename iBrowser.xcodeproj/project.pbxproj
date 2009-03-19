@@ -20,6 +20,11 @@
 		8EE2F9180F72D69F0089C887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE2F9160F72D69F0089C887 /* Foundation.framework */; };
 		8EE2F9880F72D6AE0089C887 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE2F9870F72D6AE0089C887 /* CoreLocation.framework */; };
 		8EE2F9930F72D6B80089C887 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE2F9920F72D6B80089C887 /* QuartzCore.framework */; };
+		8EE2FA730F72E0960089C887 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA680F72E0950089C887 /* ioapi.c */; };
+		8EE2FA740F72E0960089C887 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA6A0F72E0950089C887 /* mztools.c */; };
+		8EE2FA750F72E0960089C887 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA6C0F72E0950089C887 /* unzip.c */; };
+		8EE2FA760F72E0960089C887 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA6E0F72E0950089C887 /* zip.c */; };
+		8EE2FA770F72E0960089C887 /* NuZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA720F72E0960089C887 /* NuZip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,17 @@
 		8EE2F9160F72D69F0089C887 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8EE2F9870F72D6AE0089C887 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8EE2F9920F72D6B80089C887 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8EE2FA670F72E0950089C887 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		8EE2FA680F72E0950089C887 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		8EE2FA690F72E0950089C887 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		8EE2FA6A0F72E0950089C887 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		8EE2FA6B0F72E0950089C887 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		8EE2FA6C0F72E0950089C887 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		8EE2FA6D0F72E0950089C887 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		8EE2FA6E0F72E0950089C887 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		8EE2FA6F0F72E0950089C887 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		8EE2FA710F72E0960089C887 /* NuZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuZip.h; sourceTree = "<group>"; };
+		8EE2FA720F72E0960089C887 /* NuZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuZip.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +90,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				8EE2FA630F72E07F0089C887 /* nuzip */,
 				8EE2F7AD0F72D48F0089C887 /* AdMob */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -103,6 +120,42 @@
 				8EE2F8C90F72D6860089C887 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EE2FA630F72E07F0089C887 /* nuzip */ = {
+			isa = PBXGroup;
+			children = (
+				8EE2FA700F72E0950089C887 /* objc */,
+				8EE2FA660F72E0950089C887 /* unzip101e-src */,
+			);
+			name = nuzip;
+			sourceTree = "<group>";
+		};
+		8EE2FA660F72E0950089C887 /* unzip101e-src */ = {
+			isa = PBXGroup;
+			children = (
+				8EE2FA670F72E0950089C887 /* crypt.h */,
+				8EE2FA680F72E0950089C887 /* ioapi.c */,
+				8EE2FA690F72E0950089C887 /* ioapi.h */,
+				8EE2FA6A0F72E0950089C887 /* mztools.c */,
+				8EE2FA6B0F72E0950089C887 /* mztools.h */,
+				8EE2FA6C0F72E0950089C887 /* unzip.c */,
+				8EE2FA6D0F72E0950089C887 /* unzip.h */,
+				8EE2FA6E0F72E0950089C887 /* zip.c */,
+				8EE2FA6F0F72E0950089C887 /* zip.h */,
+			);
+			name = "unzip101e-src";
+			path = "nuzip/unzip101e-src";
+			sourceTree = "<group>";
+		};
+		8EE2FA700F72E0950089C887 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				8EE2FA710F72E0960089C887 /* NuZip.h */,
+				8EE2FA720F72E0960089C887 /* NuZip.m */,
+			);
+			name = objc;
+			path = nuzip/objc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +222,11 @@
 				8EAECCFB0F72C52800C6F597 /* ShareController.m in Sources */,
 				8EAECCFC0F72C52800C6F597 /* MIMEHelper.m in Sources */,
 				8EAECCFD0F72C52800C6F597 /* Utilities.m in Sources */,
+				8EE2FA730F72E0960089C887 /* ioapi.c in Sources */,
+				8EE2FA740F72E0960089C887 /* mztools.c in Sources */,
+				8EE2FA750F72E0960089C887 /* unzip.c in Sources */,
+				8EE2FA760F72E0960089C887 /* zip.c in Sources */,
+				8EE2FA770F72E0960089C887 /* NuZip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +248,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/AdMob\"",
 				);
+				OTHER_LDFLAGS = "-lZ";
 				PRODUCT_NAME = iBrowser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A2FA5C45-7EC1-4FE4-A834-590BCF399409";
 			};

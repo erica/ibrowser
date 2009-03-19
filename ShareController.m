@@ -8,6 +8,7 @@
 #import "ShareController.h"
 #import "Utilities.h"
 #import "MIMEHelper.h"
+#import "NuZip.h"
 
 @implementation ShareController 
 
@@ -58,7 +59,7 @@
 
 - (NSString *) css
 {
-	return @"<style>/* based on iui.css (c) 2007 by iUI Project Members */ body {     margin: 0;     font-family: Helvetica;     background: #FFFFFF;     color: #000000;     overflow-x: hidden;     -webkit-user-select: none;     -webkit-text-size-adjust: none; }  body > *:not(.toolbar) {     display: none;     position: absolute;     margin: 0;     padding: 0;     left: 0;     top: 45px;     width: 100%;     min-height: 372px; }  body > *[selected=\"true\"] {     display: block; }  a[selected], a:active {     background-color: #194fdb !important;     background-repeat: no-repeat, repeat-x;     background-position: right center, left top;     color: #FFFFFF !important; }  body > .toolbar {     box-sizing: border-box;     -moz-box-sizing: border-box;     -webkit-box-sizing: border-box;     border-bottom: 1px solid #2d3642;     border-top: 1px solid #6d84a2;     padding: 10px;     height: 45px;     background: #6d84a2 repeat-x; }  .toolbar > h1 {     position: absolute;     overflow: hidden;     font-size: 20px;     text-align: center;     font-weight: bold;     text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;     text-overflow: ellipsis;     white-space: nowrap;     color: #FFFFFF;      margin: 1px 0 0 -120px;     left: 50%;     width: 240px;     height: 45px; }  body > ul > li {     position: relative;     margin: 0;     border-bottom: 1px solid #E0E0E0;     padding: 8px 0 8px 10px;     font-size: 20px;     font-weight: bold;     list-style: none; }  body > ul > li > a {     display: block;     margin: -8px 0 -8px -10px;     padding: 8px 32px 8px 10px;     text-decoration: none;     color: inherit; }  a[target=\"_replace\"] {     box-sizing: border-box;     -webkit-box-sizing: border-box;     padding-top: 25px;     padding-bottom: 25px;     font-size: 18px;     color: cornflowerblue;     background-color: #FFFFFF;     background-image: none; }  body > .dialog {     top: 0;     width: 100%;     min-height: 417px;     z-index: 2;     background: rgba(0, 0, 0, 0.8);     padding: 0;     text-align: right; }  .dialog > fieldset {     box-sizing: border-box;     -webkit-box-sizing: border-box;     width: 100%;     margin: 0;     border: none;     border-top: 1px solid #6d84a2;     padding: 10px 6px;     background: #7388a5 repeat-x; }  .dialog > fieldset > h1 {     margin: 0 10px 0 10px;     padding: 0;     font-size: 20px;     font-weight: bold;     color: #FFFFFF;     text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;     text-align: center; }  .dialog > fieldset > label {     position: absolute;     margin: 16px 0 0 6px;     font-size: 14px;     color: #999999; }  p {     font-family: Helvetica;     background: #FFFFFF;     color: #000000;     padding:15px;     font-size: 20px;     margin-left: 15%;     margin-right: 15%;     text-align: center; }  </style>";
+	return @"<style>/* based on iui.css (c) 2007 by iUI Project Members */ body {     margin: 0;     font-family: Helvetica;     background: #FFFFFF;     color: #000000;     overflow-x: hidden;     -webkit-user-select: none;     -webkit-text-size-adjust: none; }  body > *:not(.toolbar) {     display: none;     position: absolute;     margin: 0;     padding: 0;     left: 0;     top: 45px;     width: 100%;     min-height: 372px; }  body > *[selected=\"true\"] {     display: block; }  a[selected], a:active {     background-color: #194fdb !important;     background-repeat: no-repeat, repeat-x;     background-position: right center, left top;     color: #FFFFFF !important; }  body > .toolbar {     box-sizing: border-box;     -moz-box-sizing: border-box;     -webkit-box-sizing: border-box;     border-bottom: 1px solid #2d3642;     border-top: 1px solid #6d84a2;     padding: 10px;     height: 45px;     background: #6d84a2 repeat-x; }  .toolbar > h1 {     position: absolute;     overflow: hidden;     font-size: 20px;     text-align: center;     font-weight: bold;     text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;     text-overflow: ellipsis;     white-space: nowrap;     color: #FFFFFF;      margin: 1px 0 0 -120px;     left: 50%;     width: 240px;     height: 45px; }  body > ul > li {     position: relative;     margin: 0;     border-bottom: 1px solid #E0E0E0;     padding: 8px 0 8px 10px;     font-size: 20px;     font-weight: bold;     list-style: none; }  body > ul > li > a {      margin: -8px 0 -8px -10px;     padding: 8px 32px 8px 10px;     text-decoration: none;     color: inherit; }  a[target=\"_replace\"] {     box-sizing: border-box;     -webkit-box-sizing: border-box;     padding-top: 25px;     padding-bottom: 25px;     font-size: 18px;     color: cornflowerblue;     background-color: #FFFFFF;     background-image: none; }  body > .dialog {     top: 0;     width: 100%;     min-height: 417px;     z-index: 2;     background: rgba(0, 0, 0, 0.8);     padding: 0;     text-align: right; }  .dialog > fieldset {     box-sizing: border-box;     -webkit-box-sizing: border-box;     width: 100%;     margin: 0;     border: none;     border-top: 1px solid #6d84a2;     padding: 10px 6px;     background: #7388a5 repeat-x; }  .dialog > fieldset > h1 {     margin: 0 10px 0 10px;     padding: 0;     font-size: 20px;     font-weight: bold;     color: #FFFFFF;     text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;     text-align: center; }  .dialog > fieldset > label {     position: absolute;     margin: 16px 0 0 6px;     font-size: 14px;     color: #999999; }  p {     font-family: Helvetica;     background: #FFFFFF;     color: #000000;     padding:15px;     font-size: 20px;     margin-left: 15%;     margin-right: 15%;     text-align: center; }  </style>";
 }
 
 - (NSString *) createindex
@@ -92,11 +93,12 @@
 		BOOL isDir;
 		NSString *cpath = [wd stringByAppendingPathComponent:fname];
 		[[NSFileManager defaultManager] fileExistsAtPath:cpath isDirectory:&isDir];
-		[outdata appendFormat:@"<li><a href=\"%@%@\">%@%@</a></li>\n", 
+		[outdata appendFormat:@"<li><a href=\"%@%@\">%@%@</a>%@</li>\n", 
 		 cpath, 
 		 isDir ? @"/" : @"",
 		 fname,
-		 isDir ? @"/" : @""		 
+		 isDir ? @"/" : @"", 
+		 isDir ? [NSString stringWithFormat:@"<a href=\"zzzzip%@.zip\">[zip]</a>", cpath] : @""
 		 ];
 		[cpath release];
 	}
@@ -118,7 +120,7 @@
 	[outdata appendString:[self css]];
 	[outdata appendString:@"</head><body>"];
 	[outdata appendString:@"<div class=\"toolbar\">	<h1 id=\"pageTitle\">Error</h1>	<a id=\"backButton\" class=\"button\" href=\"#\"></a>    </div>"];
-	[outdata appendFormat:@"<p id=\"ErrorPara\" selected=\"true\"><br />%@<br /><br />Return to <a  href=\"upload.html\">upload page</a> or <a href=\"/\">iPocket browser</a></p>", errorString];
+	[outdata appendFormat:@"<p id=\"ErrorPara\" selected=\"true\"><br />%@<br /><br />Return to <a  href=\"upload.html\">upload page</a> or <a href=\"/\">Main browser</a></p>", errorString];
 	[outdata appendString:@"</body></html>\n"];
 	
 	write (fd, [outdata UTF8String], [outdata length]);
@@ -189,6 +191,47 @@
 	{
 		printf("Error recovering mime type.\n");
 		[self produceError:@"Sorry. This file type is not supported." forFD:fd];
+		return;
+	}
+	
+	NSRange r = [filereq rangeOfString:@"zzzzip"];
+ 	if (r.location != NSNotFound)
+	{
+		NSString *path1 = [filereq substringFromIndex:r.location + 6];
+		NSString *path = [path1 substringToIndex:[path1 length] - 4];
+		printf("Zip request: %s\n", [path UTF8String]);
+		
+		NSString *zipRequest = @"zip -o archive.zip";
+		NSDirectoryEnumerator *direnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
+		
+		NSString *eachFile;
+		while (eachFile = [direnum nextObject])
+		{
+			BOOL isDir;
+			NSString *fpath = [path stringByAppendingPathComponent:eachFile];
+			[[NSFileManager defaultManager] fileExistsAtPath:fpath isDirectory:&isDir];
+			if (!isDir) zipRequest = [zipRequest stringByAppendingFormat:@" %@",
+						  [fpath stringByReplacingOccurrencesOfString:@" " withString: @"\\ "]];
+		}
+			
+		// CFShow(zipRequest);
+		chdir([DOCUMENTS_FOLDER UTF8String]);
+		[NuZip zip:zipRequest];
+		
+		// Output the file
+		NSString *outcontent = @"HTTP/1.0 200 OK\r\nContent-Type:application/x-compressed\r\n\r\n";
+		write (fd, [outcontent UTF8String], [outcontent length]);
+		NSData *data = [NSData dataWithContentsOfFile:@"archive.zip"];
+		if (!data)
+		{
+			printf("Error: file not found.\n");
+			[self produceError:@"File was not found. Please check the requested path and try again." forFD:fd];
+			return;
+		}
+		printf("Writing %d bytes from file\n", [data length]);
+		write(fd, [data bytes], [data length]);
+		close(fd);
+
 		return;
 	}
 	
