@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		8E9DDD500F7334F1009B98C7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9DDD4F0F7334F1009B98C7 /* icon.png */; };
 		8EAECCFB0F72C52800C6F597 /* ShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAECCF50F72C52800C6F597 /* ShareController.m */; };
 		8EAECCFC0F72C52800C6F597 /* MIMEHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAECCF90F72C52800C6F597 /* MIMEHelper.m */; };
 		8EAECCFD0F72C52800C6F597 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAECCFA0F72C52800C6F597 /* Utilities.m */; };
@@ -33,6 +34,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* iBrowser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBrowser_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E9DDD4F0F7334F1009B98C7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8EAECCF50F72C52800C6F597 /* ShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareController.m; sourceTree = "<group>"; };
 		8EAECCF60F72C52800C6F597 /* MIMEHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMEHelper.h; sourceTree = "<group>"; };
 		8EAECCF70F72C52800C6F597 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				8EAECCF70F72C52800C6F597 /* Utilities.h */,
 				8EAECCFA0F72C52800C6F597 /* Utilities.m */,
 				32CA4F630368D1EE00C91783 /* iBrowser_Prefix.pch */,
+				8E9DDD4F0F7334F1009B98C7 /* icon.png */,
 				8EE2FB630F732EF40089C887 /* favicon.ico */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -212,6 +215,7 @@
 			files = (
 				8EE2F7B30F72D48F0089C887 /* AdMob in Resources */,
 				8EE2FB640F732EF40089C887 /* favicon.ico in Resources */,
+				8E9DDD500F7334F1009B98C7 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
