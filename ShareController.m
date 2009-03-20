@@ -32,7 +32,7 @@
 
 - (void) serviceWasEstablished
 {
-	[(UITextView *)self.view setContentToHTMLString:[NSString stringWithFormat:@"<h2>Success!</h2><p>Your iPhone can now serve files over HTTP. To access this service, launch a browser from another computer on the same network and navigate to the following address(es):</p><p>%@%@</p><p>This service remains active until you quit from this application.</p><p>Ports are random and you are assigned a new one each time you run this program.</p>",
+	[(UITextView *)self.view setContentToHTMLString:[NSString stringWithFormat:@"<h2>Success!</h2><p>Your iPhone can now serve files over HTTP. To access this service, launch a browser from another computer or iPhone on the same network and navigate to the following address(es):</p><p>%@%@</p><p>This service remains active until you quit from this application.</p><p>Ports are random and you are assigned a new one each time you run this program.</p>",
 									  [Utilities localAddressForPort:chosenPort] ? [Utilities localAddressForPort:chosenPort]: @"", 
 									  [Utilities localIPAddressForPort:chosenPort] ? [Utilities localIPAddressForPort:chosenPort] : @"" ]];
 }
