@@ -1,0 +1,3 @@
+[submodule "nuzip"]
+        path = nuzip
+        url = git://github.com/timburks/nuzip.git
