@@ -25,6 +25,7 @@
 		8EE2FA750F72E0960089C887 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA6C0F72E0950089C887 /* unzip.c */; };
 		8EE2FA760F72E0960089C887 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA6E0F72E0950089C887 /* zip.c */; };
 		8EE2FA770F72E0960089C887 /* NuZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2FA720F72E0960089C887 /* NuZip.m */; };
+		8EE2FB640F732EF40089C887 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 8EE2FB630F732EF40089C887 /* favicon.ico */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		8EE2FA6F0F72E0950089C887 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		8EE2FA710F72E0960089C887 /* NuZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuZip.h; sourceTree = "<group>"; };
 		8EE2FA720F72E0960089C887 /* NuZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuZip.m; sourceTree = "<group>"; };
+		8EE2FB630F732EF40089C887 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				8EAECCF70F72C52800C6F597 /* Utilities.h */,
 				8EAECCFA0F72C52800C6F597 /* Utilities.m */,
 				32CA4F630368D1EE00C91783 /* iBrowser_Prefix.pch */,
+				8EE2FB630F732EF40089C887 /* favicon.ico */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE2F7B30F72D48F0089C887 /* AdMob in Resources */,
+				8EE2FB640F732EF40089C887 /* favicon.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,6 +71,9 @@
 	[outdata appendFormat:@"<head><title>%@</title>\n", cwd];
 	[outdata appendString:@"<meta name=\"viewport\" content=\"width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;\"/>"];
 	[outdata appendString:[self css]];
+	[outdata appendString:@"<script type=\"application/x-javascript\">"];
+	[outdata appendString:@"window.onload = function() { setTimeout(function() {window.scrollTo(0,1);), 100); }"];
+	[outdata appendString:@"</script>"];
 	[outdata appendString:@"</head><body>"];
 	
 	[outdata appendFormat:@"<div class=\"toolbar\">	<h1 id=\"pageTitle\">%@</h1>	<a id=\"backButton\" class=\"button\" href=\"#\"></a>    </div>", [cwd lastPathComponent]];
@@ -162,6 +165,20 @@
 		return;
 	}
 	
+	if ([filereq isEqualToString:@"/favicon.ico"])
+	{
+		NSString *outcontent = [NSString stringWithFormat:@"HTTP/1.0 200 OK\r\nContent-Type: %@\r\n\r\n", @"image/vnd.microsoft.icon"];
+		write (fd, [outcontent UTF8String], [outcontent length]);
+		NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"favicon" ofType:@"ico"]];
+		if (!data)
+		{
+			printf("Error: favicon.ico not found.\n");
+			return;
+		}
+		write(fd, [data bytes], [data length]);
+		close(fd);
+		return;
+	}
 	
 	filereq = [filereq stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
