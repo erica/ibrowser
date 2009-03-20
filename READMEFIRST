@@ -1,3 +1,7 @@
-You must download nuzip separately until I can figure out how to get git modules to work properly. Place the nuzip folder into the ibrowser folder. 
+After downloading iBrowser you must set up nuzip:
 
-nuzip is here: git://github.com/timburks/nuzip.git
+(1) cd ibrowser
+(2) git submodule init
+(3) git submodule update
+
+(Thanks Ratty_)
