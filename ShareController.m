@@ -422,10 +422,19 @@
 	[textView setEditable:NO];
 	[textView setFont:[UIFont systemFontOfSize:14.0f]];
 
+#if !TARGET_IPHONE_SIMULATOR
 	AdMobView *ad = [AdMobView requestAdWithDelegate:self]; 
     ad.frame = CGRectMake(0, 432, 320, 48); 
 	ad.center = CGPointMake(160.0f, 416.0f - 24.0f);
 	[textView addSubview:ad];
+#else
+	UILabel *ad = [[UILabel alloc] initWithFrame:CGRectMake(0, 432, 320, 48)];
+	ad.backgroundColor = [UIColor clearColor];
+	ad.textAlignment = UITextAlignmentCenter;
+	ad.text = @"[AdMob ad skipped for simulator]";
+	ad.center = CGPointMake(160.0f, 416.0f - 24.0f);
+	[textView addSubview:ad];
+#endif
 	
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 40.0f)];
 	label.backgroundColor = [UIColor clearColor];
